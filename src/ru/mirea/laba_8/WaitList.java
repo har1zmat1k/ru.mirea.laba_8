@@ -4,6 +4,7 @@ import java.util.Collection;
 
 public class WaitList<E> implements IWaitList<E>{
 
+
     @Override
     public E add(E element) {
         return null;
