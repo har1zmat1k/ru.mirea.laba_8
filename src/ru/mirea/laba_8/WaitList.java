@@ -1,5 +1,6 @@
 package ru.mirea.laba_8;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -8,6 +9,7 @@ public class WaitList<E> implements IWaitList<E>{
     private ConcurrentLinkedQueue<E> content;
 
     public WaitList() {
+        this.content = new ConcurrentLinkedQueue<E>(new ArrayList<E>());
     }
 
     public WaitList(ConcurrentLinkedQueue<E> content) {
@@ -15,7 +17,11 @@ public class WaitList<E> implements IWaitList<E>{
     }
 
     public boolean canBeDeleted(E element){
-        return true;//////
+        return element != this.content.toArray()[0];
+    }
+
+    public int size(){
+        return this.content.size();
     }
 
     ////////////////////////////////

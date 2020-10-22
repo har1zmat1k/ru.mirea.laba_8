@@ -1,8 +1,6 @@
 package ru.mirea.laba_8;
 
 
-import java.util.concurrent.ConcurrentLinkedQueue;
-
 public class BoundedWaitList<E> extends WaitList<E>{
     private final int capacity;
 
@@ -21,7 +19,11 @@ public class BoundedWaitList<E> extends WaitList<E>{
 
     @Override
     public E add(E element) {
-        super.add(element);
+        if(super.size() < capacity)
+            super.add(element);
+        else {
+            System.out.println("Этот список ожидания имеет ограниченную емкость");
+        }
         return null;
     }
 }
