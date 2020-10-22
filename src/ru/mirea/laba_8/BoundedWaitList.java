@@ -4,10 +4,9 @@ package ru.mirea.laba_8;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class BoundedWaitList<E> extends WaitList<E>{
-    private int capacity;
+    private final int capacity;
 
-    public BoundedWaitList(ConcurrentLinkedQueue<E> content, int capacity) {
-        super(content);
+    public BoundedWaitList(int capacity) {
         this.capacity = capacity;
     }
 
@@ -22,6 +21,7 @@ public class BoundedWaitList<E> extends WaitList<E>{
 
     @Override
     public E add(E element) {
-        return super.add(element);
+        super.add(element);
+        return null;
     }
 }
